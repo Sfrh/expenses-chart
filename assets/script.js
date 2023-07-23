@@ -18,10 +18,13 @@ window.onload = async () => {
         }
         return 0
     })[0]
-    for (let v of data) {
+    const week = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+    const date = new Date().getDay() 
+    for(let v of data) {
         const percent = calculateParcent(maxValue.amount, v.amount)
-        if (v.amount >= maxValue.amount) {
-            chart.innerHTML += `<div class="chart-item" style="height: ${percent}%;" day="${v.day}" amount="${v.amount}" max></div>`
+        console.log(v.day === week[date])
+        if (v.day === week[date]) {
+            chart.innerHTML += `<div class="chart-item" style="height: ${percent}%;" day="${v.day}" amount="${v.amount}" current></div>`
         } else {
             chart.innerHTML += `<div class="chart-item" style="height: ${percent}%;" day="${v.day}" amount="${v.amount}"></div>`
         }

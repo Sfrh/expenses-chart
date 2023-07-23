@@ -97,7 +97,7 @@ body {
     background-color: hsl(10, 79%, 65%);
 }
 
-.main-chart .chart-item[max] {
+.main-chart .chart-item[current] {
     background-color: hsl(186, 34%, 60%);
 }
 
@@ -115,10 +115,6 @@ body {
 
 .main-chart .chart-item:hover {
     opacity: 0.7;
-}
-
-.chart-item[day="wed"] {
-    height: 50%;
 }
 
 .main-chart .chart-item::before {
