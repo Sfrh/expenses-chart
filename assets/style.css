@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: DM Sans;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 25px;
+    background:  hsl(27, 66%, 92%);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 541px;
+    height: 125px;
+    padding: 0px 32px;
+
+    border-radius: 18px;
+    background: hsl(10, 79%, 65%);
+    transition: width 1s;
+}
+
+.header-title {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.header-title h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: hsl(33, 100%, 98%);
+}
+
+.header-title p {
+    font-size: 32px;
+    font-weight: 700;
+    color: hsl(33, 100%, 98%);
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 541px;
+    height: 510px;
+    padding: 30px 40px;
+    gap: 20px;
+
+    border-radius: 18px;
+    background: white;
+    transition: width 1s;
+}
+
+.main .main-title {
+    width: 100%;
+    font-size: 32px;
+}
+
+.main .main-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    gap: 17px;
+}
+
+.main .main-chart::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -30%;
+    background: hsl(27, 66%, 92%);
+}
+
+.main-chart .chart-item {
+    width: 51px;
+    height: 20%;
+    position: relative;
+
+    border-radius: 6px;
+    background-color: hsl(10, 79%, 65%);
+}
+
+.main-chart .chart-item[max] {
+    background-color: hsl(186, 34%, 60%);
+}
+
+.main-chart .chart-item:hover::after {
+    content: "$"attr(amount);
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: -40px;
+    padding: 5px 7px;
+    border-radius: 3px;
+    color: white;
+    background: hsl(25, 47%, 15%);
+}
+
+.main-chart .chart-item:hover {
+    opacity: 0.7;
+}
+
+.chart-item[day="wed"] {
+    height: 50%;
+}
+
+.main-chart .chart-item::before {
+    content: attr(day);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: -25px;
+}
+
+.main-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.footer-left h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: hsl(28, 10%, 53%);
+}
+
+.footer-left p {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.footer-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.footer-right h1 {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        width: 453px;
+    }
+    .main {
+        width: 453px;
+    }
+}
